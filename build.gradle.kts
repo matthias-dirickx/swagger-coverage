@@ -51,6 +51,7 @@ configure(subprojects) {
             dependency("org.hamcrest:hamcrest:2.2")
             dependency("com.jayway.jsonpath:json-path-assert:2.7.0")
             dependency("io.rest-assured:rest-assured:4.4.0")
+            dependency("com.squareup.okhttp3:okhttp:4.9.0")
             dependency("com.github.tomakehurst:wiremock:2.27.2")
             dependency("com.fasterxml.jackson.core:jackson-core:2.12.3")
             dependency("com.fasterxml.jackson.core:jackson-databind:2.12.3")
@@ -95,6 +96,10 @@ configure(subprojects) {
     tasks.compileTestJava {
         options.encoding = "UTF-8"
         options.compilerArgs.add("-parameters")
+    }
+
+    tasks.javadoc {
+        options.encoding = "UTF-8"
     }
 
     tasks.jar {
